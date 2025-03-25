@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>NETFLIX</h1>
+{% if current_user.is_authenticated %}
+<div>
+    <div><a href="{{url_for('shows.search')}}">Search</a></div>
+    <div><a href="{{url_for('users.favorites')}}">Favorites</a></div>
+    <div><a href="{{url_for('users.logout')}}">Log out</a></div>
+</div>
+{% else %}
+    <div><a href="{{url_for('users.login')}}">Log in</a></div>
+    <div><a href="{{url_for('users.register')}}">Log out</a></div>
+{% endif %}
+
+{% endblock %}

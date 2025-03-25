@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Favorites</h1>
+    {% for show in favorites %}
+    <p>{{show.title}}</p>
+    {% endfor %}
+{% endblock %}

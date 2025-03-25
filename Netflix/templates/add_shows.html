@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>ADD</h1>
+<form method="POST">
+    {{form.hidden_tag()}}
+    {{form.title.label}}{{form.title}}<br>
+    {{form.genre.label}}{{form.genre}}<br>
+    {{form.description.label}}{{form.description}}<br>
+    {{form.release_date.label}}{{form.release_date}}<br>
+    {{form.duration.label}}{{form.duration}}<br>
+    {{form.submit()}}
+</form>
+
+<a href="{{ url_for('shows.delete') }}">Edit shows</a>
+{% endblock %}

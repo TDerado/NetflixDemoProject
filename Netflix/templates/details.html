@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <p>{{show.title}}</p>
+    <p>{{show.genre}}</p>
+    <p>{{show.Description}}</p>
+    <p>{{show.release_date}}</p>
+    <p>{{show.duration}}</p>
+    <a href="{{url_for('users.favoriteShow', show_id=show.id)}}">Favorite</a>
+    <br>
+    <a href="{{url_for('shows.search')}}">back</a>
+
+{% endblock %}
