@@ -1,16 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
+<link rel="stylesheet" href="/static/detail.css">
+<div class="center">
+    <form method="POST">
+        {{form.hidden_tag()}}
+        {{form.title.label}}&nbsp;{{form.title}}&nbsp;&nbsp;
+        {{form.genre.label}}&nbsp;{{form.genre}}
+        {{form.submit()}}
+    </form>
+</div>
 
-<form method="POST">
-    {{form.hidden_tag()}}
-    {{form.title.label}}{{form.title}}
-    {{form.genre.label}}{{form.genre}}
-    {{form.submit()}}
-</form>
-
-{% for show in shows %}
-    <p>{{show.title}}</p>
-    <a href="{{url_for('shows.details', id=show.id)}}">Details</a>
-{% endfor %}
+<div class="displayRows">
+    {% for show in shows %}
+    <div class="center">
+        <div class="detailGrid">
+            {% if show.id|string in watched %}
+            <div class="watched">{{show.title}}</div>
+            {% else %}
+            <div>{{show.title}}</div>
+            {% endif %}
+            <div>{{show.genre}}</div><div>{{show.duration}} minutes</div>
+            <div class="details"><a class="removeDecoration" href="{{url_for('shows.details', id=show.id)}}">Overview: {{show.description[0:100]}} {% if show.description|length > 100 %} ...{%endif%}</a></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

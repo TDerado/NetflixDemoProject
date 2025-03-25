@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>NETFLIX</h1>
 {% if current_user.is_authenticated %}
-<div>
-    <div><a href="{{url_for('shows.search')}}">Search</a></div>
-    <div><a href="{{url_for('users.favorites')}}">Favorites</a></div>
-    <div><a href="{{url_for('users.logout')}}">Log out</a></div>
+<div class="gridbase">
+    <a class="removeDecoration" href="{{url_for('shows.search')}}"><div class="option btn">Search</div></a>
+    <a class="removeDecoration" href="{{url_for('users.favorites')}}"><div class="option btn">Favorites</div></a>
+    <a class="removeDecoration" href="{{url_for('users.logout')}}"><div class="option btn">Log out</div></a>
 </div>
 {% else %}
-    <div><a href="{{url_for('users.login')}}">Log in</a></div>
-    <div><a href="{{url_for('users.register')}}">Log out</a></div>
+    <div class="gridbase">
+        <a class="removeDecoration" href="{{url_for('users.login')}}"><div class="option btn">Log in</div></a>
+        <a class="removeDecoration"  href="{{url_for('users.register')}}"><div class="option btn">Register</div></a>
+    </div>
 {% endif %}
 
 {% endblock %}

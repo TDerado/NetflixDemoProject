@@ -1,0 +1,25 @@
+.formBorder{
+    width: 500px;
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: groove;
+    background-color: white;
+    margin: 5px;
+    padding-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.formItem{
+    margin: 0px 50px;
+}
+
+.formLabel{
+    margin-bottom: 0;
+}
+
+.formSubmit{
+    align-self: center;
+    margin: 5px 0px;
+}

@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Favorites</h1>
+<link rel="stylesheet" href="/static/detail.css">
+<h1 class="center">Favorites</h1>
     {% for show in favorites %}
-    <p>{{show.title}}</p>
+    <div class="center">
+        <div class="detailGrid">
+            <div>{{show.title}}</div><div>{{show.genre}}</div><div>{{show.duration}} minutes</div>
+            <div class="details"><a class="removeDecoration" href="{{url_for('shows.details', id=show.id)}}">Details: {{show.description[0:100]}} {% if show.description|length > 100 %} ...{%endif%}</a></div>
+        </div>
+    </div>
     {% endfor %}
+
+    <a href="{{url_for('shows.search')}}">back</a>
 {% endblock %}

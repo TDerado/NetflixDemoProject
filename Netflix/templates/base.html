@@ -5,30 +5,30 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/main.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-  <ul class="nav">
-    <li class="nav-link"><a href="/">Home</a></li>
+  <div class="navbar">
+    <div class="navItem"><a href="/">Home</a></div>
     {% if current_user.is_authenticated %}
-    <li class="nav-link"><a href="{{ url_for('shows.search') }}">Search</a></li>
-    <li class="nav-link"><a href="{{ url_for('users.favorites') }}">Favorites</a></li>
-    <li class="nav-link"><a href="{{ url_for('shows.add') }}">Add shows</a></li>
-    <li class="nav-link"><a href="{{ url_for('users.logout') }}">Log Out</a></li>
+    <div class="navItem"><a href="{{ url_for('shows.search') }}">Search</a></div>
+    <div class="navItem"><a href="{{ url_for('users.favorites') }}">Favorites</a></div>
+    <div class="navItem"><a href="{{ url_for('shows.add') }}">Add shows</a></div>
+    <div class="navItem"><a href="{{ url_for('users.logout') }}">Log Out</a></div>
     {% else %}
-    <li class="nav-link"><a href="{{ url_for('users.register') }}">Register</a></li>
-    <li class="nav-link"><a href="{{ url_for('users.login') }}">Login</a></li>
-    <li class="nav-link"><a href="{{ url_for('shows.add') }}">Add shows</a></li>
+    <div class="navItem"><a href="{{ url_for('users.register') }}">Register</a></div>
+    <div class="navItem"><a href="{{ url_for('users.login') }}">Login</a></div>
+    <div class="navItem"><a href="{{ url_for('shows.add') }}">Add shows</a></div>
     {% endif %}
-
-</ul>
+  </div>
+  <header id="head">NETFLIX</header>
 <div class="container">
   {% block content %}
 
   {% endblock %}
 </div>
-
 
   </body>
 </html>

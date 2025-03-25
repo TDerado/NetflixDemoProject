@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-    <form method="POST">
+<link rel="stylesheet" href="/static/form.css">
+
+<div class="center">
+    <form method="POST" class="formBorder">
         {{form.hidden_tag()}}
-        {{form.email.label}}{{form.email}}<br>
-        {{form.username.label}}{{form.username}}<br>
-        {{form.password.label}}{{form.password}}<br>
-        {{form.pass_confirm.label}}{{form.pass_confirm}}<br>
-        {{form.submit()}}
+        {{form.email.label(class="formLabel")}}{{form.email(class="formItem")}}<br>
+        {{form.username.label(class="formLabel")}}{{form.username(class="formItem")}}<br>
+        {{form.password.label(class="formLabel")}}{{form.password(class="formItem")}}<br>
+        {{form.pass_confirm.label(class="formLabel")}}{{form.pass_confirm(class="formItem")}}<br>
+        <div class="formSubmit">{{form.submit()}}</div>
     </form>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div>
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
 {% endblock %}

@@ -21,4 +21,4 @@ class DeleteShow(FlaskForm):
 class SearchShows(FlaskForm):
     title = StringField('Title')
     genre = StringField('Genre')
-    submit = SubmitField('Find')
+    submit = SubmitField('Search')

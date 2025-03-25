@@ -1,0 +1,38 @@
+.detailGrid{
+    display: grid;
+    grid-template: 1fr / 150px 150px 150px;
+    grid-template-areas:"a b c"
+                        "d d d";
+    border-width: 3px;
+    border-style: solid;
+    border-color: brown;
+    padding: 15px;
+    margin-top: -3px;
+    background-color: rgb(185, 102, 102);
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.genre{
+    font-size: 2rem;
+}
+
+.duration{
+    font-size: 2rem;
+}
+
+.details{
+    grid-column: span 3;
+    text-align: left;
+}
+
+.detailRow{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.watched{
+    color: aqua;
+}
